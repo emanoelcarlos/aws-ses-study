@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  aws-ses-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aws-ses-test
+    ports:
+      - "3001:3001"
+    # networks:
+    #   - backend
+
+# networks:
+#   backend:
+#     external: true
