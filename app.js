@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
   };
 
   // Create the promise and SES service object
-  var sendPromise = new AWS.SES({ apiVersion: "2010-12-01", accessKeyId: process.env.AWS_ID, secretAccessKey: process.env.AWS_KEY, region: "us-east-1" })
+  var sendPromise = new AWS.SES({ apiVersion: "2010-12-01" })
     .sendEmail(params)
     .promise();
 
