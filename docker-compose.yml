@@ -1,16 +1,27 @@
 version: "3"
 
 services:
-  aws-ses-test:
+  nginx-production:
+    container_name: nginx-production
+    image: nginx:latest
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/
+    # networks:
+    # - front
+
+  aws-ses-test-backend:
     build:
       context: .
       dockerfile: Dockerfile
-    image: aws-ses-test
+    image: aws-ses-test-backend
     ports:
       - "3001:3001"
     # networks:
     #   - backend
-
 # networks:
 #   backend:
 #     external: true
