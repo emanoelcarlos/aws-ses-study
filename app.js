@@ -9,7 +9,7 @@ app.listen(3001, () => {
   console.log("Listening port 3001 ...");
 });
 
-app.get("/", (req, res) => {
+app.get("/send-email", (req, res) => {
   // Create sendEmail params
   var params = {
     Destination: {
