@@ -48,8 +48,10 @@ app.get("/send-email", (req, res) => {
   sendPromise
     .then(function (data) {
       console.log("then", data.MessageId);
+      res.status(200).send({message: "Email sent"});
     })
     .catch(function (err) {
       console.error("catch", err, err.stack);
+      res.status(502).send({message: "A problem occurred. The email was not sent."});
     });
 });
