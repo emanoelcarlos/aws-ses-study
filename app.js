@@ -15,7 +15,7 @@ app.get("/send-email", (req, res) => {
     Destination: {
       /* required */
       CcAddresses: [],
-      ToAddresses: ["emanoel.ferraz@evoy.io"],
+      ToAddresses: ["dev.emanoel.ferraz@gmail.com"],
     },
     Message: {
       /* required */
